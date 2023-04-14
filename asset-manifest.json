@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Crypto-App/static/css/main.f82ea8fb.css",
-    "main.js": "/Crypto-App/static/js/main.254cedc1.js",
+    "main.js": "/Crypto-App/static/js/main.b389b595.js",
     "static/media/loading.png": "/Crypto-App/static/media/loading.89fb99d99b8b2e6c49a0.png",
     "static/media/cryptocurrency.png": "/Crypto-App/static/media/cryptocurrency.1548aced3f0605895bac.png",
     "index.html": "/Crypto-App/index.html",
     "main.f82ea8fb.css.map": "/Crypto-App/static/css/main.f82ea8fb.css.map",
-    "main.254cedc1.js.map": "/Crypto-App/static/js/main.254cedc1.js.map"
+    "main.b389b595.js.map": "/Crypto-App/static/js/main.b389b595.js.map"
   },
   "entrypoints": [
     "static/css/main.f82ea8fb.css",
-    "static/js/main.254cedc1.js"
+    "static/js/main.b389b595.js"
   ]
 }
