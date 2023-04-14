@@ -23,9 +23,9 @@ const App = () => {
             </Link> <br />
           </Typography.Title>
           <Space>
-            <Link to="/crypto-app/">Home</Link>
-            <Link to="/crypto-app/crypto">Cryptocurrency</Link>
-            <Link to="/crypto-app/news">News</Link>
+            <Link to="/Crypto-App/">Home</Link>
+            <Link to="/Crypto-App/crypto">Cryptocurrency</Link>
+            <Link to="/Crypto-App/news">News</Link>
           </Space>
         </div>
       </div>

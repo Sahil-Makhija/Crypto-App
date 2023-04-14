@@ -9,23 +9,23 @@ import { store } from './redux/store';
 
 const router = createBrowserRouter([
   {
-    path:'/crypto-app/',
+    path:'/Crypto-App/',
     element:<App/>,
     children:[
       {
-        path:'/crypto-app/',
+        path:'/Crypto-App/',
         element:<Home/>
       },
       {
-        path:'/crypto-app/news',
+        path:'/Crypto-App/news',
         element:<News searchTerm={'Cryptocurrency'} />
       },
       {
-        path:'/crypto-app/crypto',
+        path:'/Crypto-App/crypto',
         element:<Crypto/>
       },
       {
-        path:'/crypto-app/crypto/:coinID',
+        path:'/Crypto-App/crypto/:coinID',
         element:<CryptoData/>
       },
     ]

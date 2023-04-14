@@ -19,18 +19,18 @@ const Navbar = () => {
             <div className="nav-container">
                 <div className="logo-container">
                     <Avatar src={icon} size="large" />
-                    <Typography.Title level={2} className="logo"><Link to="/crypto-app/">Cryptopia</Link></Typography.Title>
+                    <Typography.Title level={2} className="logo"><Link to="/Crypto-App/">Cryptopia</Link></Typography.Title>
                     <Button className="menu-control-container" onClick={()=>{show ? setShow(false):setShow(true)}}><MenuOutlined /></Button>
                 </div>
                 <Menu  theme="dark" hidden={ show}  >
                     <Menu.Item icon={<HomeOutlined />}>
-                        <Link to="/crypto-app/">Home</Link>
+                        <Link to="/Crypto-App/">Home</Link>
                     </Menu.Item>
                     <Menu.Item icon={<FundOutlined />}>
-                        <Link to="/crypto-app/crypto">Cryptocurrency</Link>
+                        <Link to="/Crypto-App/crypto">Cryptocurrency</Link>
                     </Menu.Item>
                     <Menu.Item icon={<BulbOutlined />}>
-                        <Link to="/crypto-app/news">News</Link>
+                        <Link to="/Crypto-App/news">News</Link>
                     </Menu.Item>
                 </Menu>
             </div>
