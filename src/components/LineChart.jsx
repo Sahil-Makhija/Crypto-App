@@ -16,13 +16,9 @@ ChartJS.register(
   CategoryScale,
   LinearScale,
   PointElement,
-//   Title,
   LineElement,
-//   Tooltip,
-//   Legend
 );
 
-// const { Typography.Title } = Typography;
 
 const LineChart = ( {coinHistory , coinName , currentPrice}) => {
   const coinPrice = [];

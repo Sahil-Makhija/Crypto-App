@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useGetCoinsDataQuery, useGetCoinHistoryQuery } from '../redux/cryptoApi'
 
-import { Col, Row, Typography, Select } from 'antd';
+import { Col, Row, Typography, Select, Card, Avatar } from 'antd';
 import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCircleOutlined, StopOutlined, TrophyOutlined, CheckOutlined, NumberOutlined, ThunderboltOutlined } from '@ant-design/icons';
 
 import millify from 'millify';
+import moment from 'moment';
 import HTMLReactParser from 'html-react-parser';
 
 import Loader from './Loader'
 import LineChart from './LineChart';
+import { useGetNewsQuery } from '../redux/cryptoNews';
 
 
 const { Title, Text } = Typography;
@@ -20,10 +22,14 @@ const CryptoData = () => {
   const [timePeriod, setTimePeriod] = useState('7d')
 
 
-  const { data, error, isLoading } = useGetCoinsDataQuery({coinID,timePeriod})
-  const {data : coinHistory} = useGetCoinHistoryQuery({coinID,timePeriod})
+  const { data, error, isLoading } = useGetCoinsDataQuery({ coinID, timePeriod })
+  const { data: coinHistory } = useGetCoinHistoryQuery({ coinID, timePeriod })
   const cryptoDetails = data?.data?.coin;
   const time = ['3h', '24h', '7d', '30d', '1y', '3m', '3y', '5y'];
+
+
+  //news item
+  const { data: news } = useGetNewsQuery({ searchTerm: cryptoDetails?.name, count: 3 })
 
   const stats = [
     { title: 'Price to USD', value: `$ ${cryptoDetails?.price}`, icon: <DollarCircleOutlined /> },
@@ -55,7 +61,7 @@ const CryptoData = () => {
         </Select>
 
         <LineChart coinHistory={coinHistory} currentPrice={millify(cryptoDetails?.price)} coinName={cryptoDetails?.name} />
-        
+
         <Col className="stats-container">
           <Col className="coin-value-statistics">
             <Col className="coin-value-statistics-heading">
@@ -102,6 +108,29 @@ const CryptoData = () => {
                 <Title level={5} className="link-name">{link.type}</Title>
                 <a href={link.url} target="_blank" rel="noreferrer">{link.name}</a>
               </Row>
+            ))}
+          </Col>
+          <Col className='crypto-news' >
+            <Title level={3} className="coin-details-heading">Realted News</Title>
+            {news?.value.map((news, i) => (
+              <Col key={i}>
+                <Card hoverable className="news-card">
+                  <a href={news.url} target="_blank" rel="noreferrer">
+                    <div className="news-image-container">
+                      <Title className="news-title" level={4}>{news.name}</Title>
+                      <img src={news?.image?.thumbnail?.contentUrl} alt="" />
+                    </div>
+                    <p>{news.description.length > 100 ? `${news.description.substring(0, 100)}...` : news.description}</p>
+                    <div className="provider-container">
+                      <div>
+                        <Avatar src={news.provider[0]?.image?.thumbnail?.contentUrl} alt="" />
+                        <Text className="provider-name">{news.provider[0]?.name}</Text>
+                      </div>
+                      <Text>{moment(news.datePublished).startOf('ss').fromNow()}</Text>
+                    </div>
+                  </a>
+                </Card>
+              </Col>
             ))}
           </Col>
         </Col>

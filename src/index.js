@@ -13,19 +13,19 @@ const router = createBrowserRouter([
     element:<App/>,
     children:[
       {
-        path:'/',
+        path:'/Crypto-App/',
         element:<Home/>
       },
       {
-        path:'/news',
+        path:'/Crypto-App/news',
         element:<News searchTerm={'Cryptocurrency'} />
       },
       {
-        path:'/crypto',
+        path:'/Crypto-App/crypto',
         element:<Crypto/>
       },
       {
-        path:'/crypto/:coinID',
+        path:'/Crypto-App/crypto/:coinID',
         element:<CryptoData/>
       },
     ]

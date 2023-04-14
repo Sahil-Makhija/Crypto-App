@@ -222,7 +222,8 @@ a:hover{
 
 .coin-desc-link{
     display: flex;
-    gap: 40px;
+    justify-content: space-between;
+    /* gap: 40px; */
     margin-top: 40px;
     padding-top: 20px;
 }
@@ -251,7 +252,7 @@ a:hover{
 
 .coin-links{
   padding: 0px 20px;
-    flex: 0.5;
+    /* flex: 0.5; */
 }
 
 .coin-link{
@@ -390,5 +391,14 @@ width: 70%;
     display: flex;
     flex-direction: column;
     padding: 20px;
+    align-items: center;
+}
+
+.crypto-news{
+    border: 2px solid black;
+    width: 80%;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
