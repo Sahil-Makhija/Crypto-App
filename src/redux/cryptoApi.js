@@ -1,6 +1,6 @@
 import { createApi } from '@reduxjs/toolkit/query/react'
 import { fetchBaseQuery } from '@reduxjs/toolkit/query'
-
+import { CRYPTO_KEY } from '../credential'
 
 
 
@@ -9,7 +9,7 @@ const cryptoApi = createApi({
     baseQuery : fetchBaseQuery({
         baseUrl : 'https://coinranking1.p.rapidapi.com',
         prepareHeaders:(headers)=> {
-            headers.set('X-RapidAPI-Key','3c80342ca4mshb7841c3b357f4a7p1e748ejsnd27821927bed')
+            headers.set('X-RapidAPI-Key',`${CRYPTO_KEY}`)
             headers.set('X-RapidAPI-Host','coinranking1.p.rapidapi.com')
 
             return headers

@@ -27,12 +27,12 @@ const Home = () => {
             </Row>
             <div className="home-heading-container">
                 <Title level={2} className="home-title">Top 10 Cryptos In The World</Title>
-                <Title level={3} className="show-more"><Link to="/Crypto-App/crypto">Show more</Link></Title>
+                <Title level={3} className="show-more"><Link to="/crypto">Show more</Link></Title>
             </div>
             <Crypto simplified />
             <div className="home-heading-container">
                 <Title level={2} className="home-title">Latest Crypto News</Title>
-                <Title level={3}><Link to="/Crypto-App/news">Show more</Link></Title>
+                <Title level={3}><Link to="/news">Show more</Link></Title>
             </div>
             <News simplified />
         </div>
