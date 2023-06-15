@@ -110,7 +110,7 @@ const CryptoData = () => {
               </Row>
             ))}
           </Col>
-          <Col className='crypto-news' >
+          <Col className='crypto-news' style={{width:'95%';}}>
             <Title level={3} className="coin-details-heading">Realted News</Title>
             {news?.value.map((news, i) => (
               <Col key={i}>
